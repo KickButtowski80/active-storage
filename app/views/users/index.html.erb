@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag "https://s3-us-west-1.amazonaws.com/active-storage-rails-tutorial-kick/Screen+Shot+2018-07-27+at+14.43.39.png" ,height: '100',  widht: "100" %>
+ 
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
